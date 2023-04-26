@@ -6,10 +6,13 @@ describe("Given a Button component", () => {
   describe("When the user clicks the button", () => {
     test("Then it should call the received action", async () => {
       const actionOnClick = jest.fn();
+      const expectedText = "delete";
 
-      render(<Button icon="" actionOnClick={actionOnClick} />);
+      render(<Button text={expectedText} actionOnClick={actionOnClick} />);
 
-      const button = screen.getByRole("buttonDelete");
+      const button = screen.getByRole("button", {
+        name: "delete",
+      });
 
       await userEvent.click(button);
 

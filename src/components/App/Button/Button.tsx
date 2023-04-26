@@ -1,16 +1,16 @@
 interface ButtonProps {
-  icon: string;
+  text: string;
   actionOnClick: () => void;
 }
 
-const Button = ({ icon, actionOnClick }: ButtonProps): JSX.Element => {
+const Button = ({ text, actionOnClick }: ButtonProps): JSX.Element => {
   return (
     <button
       type="button"
       className="button button--delete"
       onClick={actionOnClick}
     >
-      {icon}
+      {text}
     </button>
   );
 };
